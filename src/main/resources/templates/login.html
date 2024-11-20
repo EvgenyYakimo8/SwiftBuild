@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form th:action="@{/user/login}" method="post"> <!--Этот POST метод не описывается в нашем контроллере, а передаётся в loginProcessingUrl в классе SecurityConfiguration, а там он уже автоматически обрабатывается-->
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button>Submit</button>
+</form>
+</body>
+</html>
