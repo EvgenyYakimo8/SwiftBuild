@@ -9,15 +9,7 @@
 </head>
 <body>
 <th:block th:replace="fragments/navBar::navbar"></th:block>
-<p sec:authentication="name"></p>
-<div><a href="/user/reg">Registration</a></div>
-<div><a href="/user/login">Login</a></div>
-<div><a href="/user/profile">Profile</a></div>
-<div><a sec:authorize="hasRole('ADMIN')" href="/admin">Admin Panel</a></div>
-
-<form th:action="@{/user/logout}" method="post">
-    <button>Logout</button>
-</form>
+<h1 sec:authentication="name"></h1>
 
 <th:block th:replace="fragments/bootstrap::bootstrap-scripts"></th:block>
 </body>

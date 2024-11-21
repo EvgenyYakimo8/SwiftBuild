@@ -17,5 +17,5 @@ public class Work {
 
     private String name;
     private String description;
-    private String type;
+    private String cost;
 }

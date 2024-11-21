@@ -9,10 +9,9 @@
 </head>
 <body>
 <th:block th:replace="fragments/navBar::navbar"></th:block>
-<h1>Estimate</h1>
-<!--Переделать код - тут надо естимате а не воркс todo-->
-<!--<div>
-    <form th:action="@{/estimate/save}" method="post" th:object="${estimate}">
+
+<div>
+    <form th:action="@{/work/save}" method="post" th:object="${work}">
         <div class="mb-3">
             <label for="name" class="form-label"><b>Name of the work  -></b></label>
             <input type="text" th:field="*{name}" class="form-control" id="name"
@@ -20,7 +19,7 @@
                    required>
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label"><b>Description of the works  -></b></label>
+            <label for="description" class="form-label"><b>Description of the work  -></b></label>
             <input type="text" th:field="*{description}" class="form-control" id="description"
                    placeholder="Enter description of the work here" autocomplete="off"
                    required>
@@ -33,7 +32,8 @@
         </div>
         <button>Save a new job</button>
     </form>
-</div>-->
+</div>
+
 <th:block th:replace="fragments/bootstrap::bootstrap-scripts"></th:block>
 </body>
 </html>
