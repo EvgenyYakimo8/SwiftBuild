@@ -13,24 +13,47 @@
 <div>
     <form th:action="@{/work/save}" method="post" th:object="${work}">
         <div class="mb-3">
-            <label for="name" class="form-label"><b>Name of the work  -></b></label>
+            <label for="name" class="form-label"><b>Name of the work -></b></label>
             <input type="text" th:field="*{name}" class="form-control" id="name"
                    placeholder="Enter name of the work here" autocomplete="off"
                    required>
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label"><b>Description of the work  -></b></label>
+            <label for="description" class="form-label"><b>Description of the work -></b></label>
             <input type="text" th:field="*{description}" class="form-control" id="description"
                    placeholder="Enter description of the work here" autocomplete="off"
                    required>
         </div>
         <div class="mb-3">
-            <label for="cost" class="form-label"><b>Сost of the work  -></b></label>
-            <input type="text" th:field="*{cost}" class="form-control" id="cost"
+            <label for="cost" class="form-label"><b>Сost of the work -></b></label>
+            <input type="number" th:field="*{cost}" class="form-control" id="cost"
                    placeholder="Enter cost of the work here" autocomplete="off"
                    required>
         </div>
         <button>Save a new job</button>
+    </form>
+
+
+    <form th:action="@{/work/saveten}" method="post" th:object="${work}">
+        <div class="mb-3">
+            <label for="name1" class="form-label"><b>Name of the work -></b></label>
+            <input type="text" th:field="*{name}" class="form-control" id="name1"
+                   placeholder="Enter name of the work here" autocomplete="off"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label for="description1" class="form-label"><b>Description of the work -></b></label>
+            <input type="text" th:field="*{description}" class="form-control" id="description1"
+                   placeholder="Enter description of the work here" autocomplete="off"
+                   required>
+        </div>
+        <div class="mb-3">
+            <label for="cost1" class="form-label"><b>Сost of the work -></b></label>
+            <input type="number" th:field="*{cost}" class="form-control" id="cost1"
+                   placeholder="Enter cost of the work here" autocomplete="off"
+                   required>
+        </div>
+        <button>Save 10 test jobs</button>
     </form>
 </div>
 

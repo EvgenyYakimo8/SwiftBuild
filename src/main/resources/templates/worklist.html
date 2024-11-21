@@ -4,12 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Panel</title>
+    <title>SwiftBuild</title>
     <th:block th:replace="fragments/bootstrap::bootstrap"></th:block>
 </head>
 <body>
 <th:block th:replace="fragments/navBar::navbar"></th:block>
-<h1>Admin</h1>
+
+
+<h1>Works List</h1>
+<ul>
+    <li th:each="entity : ${works}">
+        <span th:text="${entity.name}">Entity Name</span>
+        <span th:text="${entity.description}">Entity description</span>
+        <span th:text="${entity.cost}">Entity cost</span>
+    </li>
+</ul>
+
 
 <th:block th:replace="fragments/bootstrap::bootstrap-scripts"></th:block>
 </body>

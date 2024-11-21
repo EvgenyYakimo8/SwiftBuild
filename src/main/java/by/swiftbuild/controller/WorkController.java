@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/work")
 public class WorkController {
@@ -23,10 +25,23 @@ public class WorkController {
         return "work";
     }
 
+    @GetMapping("/workList")
+    public String workList(Model model) {
+        List<Work> works = workService.findAll();
+        model.addAttribute("works", works);
+        return "worklist";
+    }
+
     @PostMapping("/save")
     public String save(@ModelAttribute Work work) {
         workService.save(work);
-        return "redirect:/work";
+        return "redirect:workList";
+    }
+
+    @PostMapping("/saveten")
+    public String saveTen(@ModelAttribute Work work) {
+        workService.saveTen();
+        return "redirect:workList";
     }
 
 }
