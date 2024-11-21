@@ -3,13 +3,55 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registration</title>
+    <th:block th:replace="fragments/bootstrap::bootstrap"></th:block>
 </head>
 <body>
-<form th:action="@{/user/reg}" method="post" th:object="${user}">
-    <input type="text" th:field="*{username}" placeholder="Username">
-    <input type="password" th:field="*{password}" placeholder="Password">
-    <button>Submit</button>
-</form>
+<th:block th:replace="fragments/navBar::navbar"></th:block>
+
+
+<div class="container">
+    <div class="row min-vh-100 align-items-center">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <div class="header mb-5">
+                <h2 th:align="center">Добро пожаловать</h2>
+                <h6 th:align="center"><b>SwiftBuild</b> - ваш идеальный партнер в строительстве!</h6>
+            </div>
+            <!--Вставка картинки не работает - починить потом todo-->
+            <!--<div class="row justify-content-center mb-5">
+                <img class="col-2" src="static/images/analysis256.png">
+            </div>-->
+            <!--Этот POST метод не описывается в нашем контроллере, а передаётся в loginProcessingUrl в классе SecurityConfiguration, а там он уже автоматически обрабатывается-->
+
+            <div class="row justify-content-center">
+                <form th:action="@{/user/reg}" method="post" th:object="${user}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><b>Username -></b></label>
+                        <input type="text" th:field="*{username}" class="form-control" id="username"
+                               placeholder="Enter username here" autocomplete="off"
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><b>Password -></b></label>
+                        <input type="password" th:field="*{password}" class="form-control" id="password"
+                               placeholder="Enter password here"
+                               autocomplete="off" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 mb-2 mt-3">Registration</button>
+                    <button style="text-align: center" type="button" onclick="window.location='/user/login'"
+                            class="btn btn-outline-success btn-sm w-100">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+<th:block th:replace="fragments/bootstrap::bootstrap-scripts"></th:block>
 </body>
 </html>
