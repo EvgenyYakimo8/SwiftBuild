@@ -26,7 +26,7 @@ public class UserController {
     @PostMapping("/reg")
     public String regSubmit(@ModelAttribute User user) {
         userService.save(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     /**
