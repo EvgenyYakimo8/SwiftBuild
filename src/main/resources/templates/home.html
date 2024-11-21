@@ -3,17 +3,22 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
+    <th:block th:replace="fragments/bootstrap::bootstrap"></th:block>
 </head>
 <body>
+<th:block th:replace="fragments/navBar::navbar"></th:block>
 <p sec:authentication="name"></p>
-<a href="/user/reg">Registration</a>
-<a href="/user/login">Login</a>
-<a href="/user/profile">Profile</a>
-<a sec:authorize="hasRole('ADMIN')" href="/admin">Admin Panel</a>
+<div><a href="/user/reg">Registration</a></div>
+<div><a href="/user/login">Login</a></div>
+<div><a href="/user/profile">Profile</a></div>
+<div><a sec:authorize="hasRole('ADMIN')" href="/admin">Admin Panel</a></div>
 
 <form th:action="@{/user/logout}" method="post">
     <button>Logout</button>
 </form>
+
+<th:block th:replace="fragments/bootstrap::bootstrap-scripts"></th:block>
 </body>
 </html>

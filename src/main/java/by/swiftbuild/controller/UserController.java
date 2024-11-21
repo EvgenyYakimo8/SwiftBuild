@@ -31,7 +31,7 @@ public class UserController {
 
     /**
      * Post запрос для login указывается в login.html и обрабатывается в loginProcessingUrl в классе SecurityConfiguration
-     * Post запрос для logout указывается в home.html и обрабатывается в loginProcessingUrl в классе SecurityConfiguration todo
+     * Post запрос для logout указывается в home.html и обрабатывается в loginProcessingUrl в классе SecurityConfiguration
      * */
     @GetMapping("/login")
     public String login() {
@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/profile")
-    public String profile() {
+    public String profile() { // после входа почему-то перенаправляет на эту страницу todo разобраться
         return "profile";
     }
 }
